@@ -145,8 +145,11 @@ a { color: inherit; }
 .btn[disabled] { opacity: .7; cursor: progress; transform: none; }
 
 .emblem { transition: transform .5s ease-out; position: relative; width: 100%; max-width: 480px; justify-self: center; aspect-ratio: 1; display: grid; place-items: center; }
-.emblem img { width: 78%; height: auto; position: relative; z-index: 1; animation: logoIn 1.6s .2s var(--ease) both; filter: drop-shadow(0 20px 40px rgba(0,0,0,.25)); }
-@keyframes logoIn { from { opacity: 0; transform: scale(.88); filter: blur(10px); } to { opacity: 1; transform: none; } }
+.emblem img { width: 78%; height: auto; position: relative; z-index: 1; animation: logoIn 1.6s .2s var(--ease) both; }
+/* Sin filtros: en iPhone un filtro hace que el logo se dibuje borroso */
+.emblem::before { content: ""; position: absolute; inset: 18%; border-radius: 50%; background: radial-gradient(circle, rgba(36,10,18,.35), transparent 70%); }
+@keyframes logoIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes boxIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 .orbit { position: absolute; inset: 0; animation: spin 40s linear infinite; }
 .orbit svg { width: 100%; height: 100%; overflow: visible; }
 .orbit text { font-family: var(--font-body); font-size: 13.5px; letter-spacing: .42em; font-weight: 600; fill: var(--taupe); text-transform: uppercase; }
@@ -329,7 +332,7 @@ fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 
 .success {
   position: relative; overflow: hidden; background: var(--burgundy); color: var(--bone);
-  border-radius: 30px; padding: 56px 36px; text-align: center; animation: logoIn .9s var(--ease) both;
+  border-radius: 30px; padding: 56px 36px; text-align: center; animation: boxIn .9s var(--ease) both;
 }
 .success canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .success img { width: 120px; margin: 0 auto 10px; display: block; }
