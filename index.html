@@ -10,7 +10,7 @@
 <meta property="og:image" content="logo-bone.png">
 <title>The Circle · First Lap</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="The Circle / 001 · First Lap. Movimiento, música y comunidad en Bucaramanga. Domingo 13 de diciembre en Broncoffee. 70 cupos.">
+<meta name="description" content="The Circle / 001 · First Lap. Movimiento, música y comunidad en Bucaramanga. Domingo 13 de diciembre en Broncoffee. Preventa abierta, cupos limitados.">
 <meta name="theme-color" content="#541126">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -585,6 +585,10 @@ footer small { color: var(--taupe); letter-spacing: .16em; text-transform: upper
 .price-note { margin: 20px 0 0; padding-top: 16px; border-top: 1px solid rgba(245,240,230,.2); font-size: 15px; color: #e3d5c8; }
 .check a { color: var(--burgundy); font-weight: 700; text-underline-offset: 3px; }
 
+.price-tag { margin: 0 0 8px; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; color: var(--taupe); }
+.price-seats { display: inline-flex; align-items: center; gap: 8px; }
+.price-seats b { width: 8px; height: 8px; border-radius: 50%; background: #6fd08f; box-shadow: 0 0 0 0 rgba(111,208,143,.6); animation: live 2s infinite; }
+
 /* ---------- Políticas ---------- */
 .policies { padding-block: 10px 110px; display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; align-items: start; scroll-margin-top: 20px; }
 .policies-head { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 40px); min-width: 0; }
@@ -721,7 +725,7 @@ img { max-width: 100%; }
         <div class="hero-meta">
           <span>Domingo 13 de diciembre</span>
           <span>7:00 a. m.</span>
-          <span>70 cupos</span>
+          <span>Cupos limitados</span>
           <a class="meta-link" href="https://www.google.com/maps/place/broncoffee/data=!4m2!3m1!1s0x8e683f007c2c1547:0xab8c74d1c0bf151e" target="_blank" rel="noopener">Broncoffee · Bucaramanga</a>
         </div>
         <div class="hero-actions">
@@ -775,7 +779,7 @@ img { max-width: 100%; }
       <a class="maps-btn" href="https://www.google.com/maps/place/broncoffee/data=!4m2!3m1!1s0x8e683f007c2c1547:0xab8c74d1c0bf151e" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Cómo llegar a Broncoffee</a>
     </div>
     <ol class="timeline">
-      <li><time>7:00 a. m.</time><div><h3>The Welcome Circle</h3><p>Check-in en Broncoffee, entrega de manillas, hidratación y primeras conversaciones.</p></div></li>
+      <li><time>7:00 a. m.</time><div><h3>The Welcome Circle</h3><p>Check-in en Broncoffee, hidratación y primeras conversaciones.</p></div></li>
       <li><time>7:30 a. m.</time><div><h3>The Warm-Up</h3><p>Bienvenida y movilidad guiada por un entrenador.</p></div></li>
       <li><time>7:50 a. m.</time><div><h3>The Movement</h3><p>5K en un solo grupo. Cada quien va a su ritmo y nuestro equipo acompaña el recorrido para que nadie se quede atrás. Volvemos juntos al punto de encuentro a las 9:00 a. m.</p></div></li>
       <li><time>9:00 a. m.</time><div><h3>The Social Session</h3><p>Hora y media de Coffee &amp; Healthy Drinks Party: DJ en vivo, café, bebidas saludables, fotos y estaciones de aliados.</p></div></li>
@@ -812,9 +816,9 @@ img { max-width: 100%; }
     <h2 id="h-title" class="reveal-l">Sin tiquetes. <em>Tu nombre es tu entrada.</em></h2>
     <ol class="steps">
       <li class="reveal"><h3>Te preinscribes</h3><p>Tú y tus acompañantes, cada uno con su nombre.</p></li>
-      <li class="reveal"><h3>Te escribimos</h3><p>Te enviamos por WhatsApp la llave Bre-B o el QR para pagar.</p></li>
+      <li class="reveal"><h3>Tu acceso exclusivo</h3><p>Estás viendo la preventa antes que nadie. Te escribimos por WhatsApp con el QR de Bre-B para asegurar tu precio Early Circle.</p></li>
       <li class="reveal"><h3>Confirmas tu cupo</h3><p>Pagas $30.000 por Bre-B y nos envías el comprobante. Ahí tu lugar queda asegurado.</p></li>
-      <li class="reveal"><h3>Recibes tu manilla</h3><p>El día del evento dices tu nombre en el check-in y entras al círculo.</p></li>
+      <li class="reveal"><h3>Entras al círculo</h3><p>El día del evento dices tu nombre en el check-in y listo.</p></li>
     </ol>
     <p class="swipe">Desliza para ver los pasos <i aria-hidden="true">→</i></p>
   </section>
@@ -824,20 +828,23 @@ img { max-width: 100%; }
       <div class="join-intro">
         <p class="eyebrow b">Preinscripción</p>
         <h2 id="j-title">Entra al <em>círculo.</em></h2>
-        <p>Preinscríbete gratis y te escribimos por WhatsApp con los datos de pago. Tu cupo queda confirmado cuando recibamos tu pago.</p>
+        <p>La preventa ya está abierta y tienes acceso antes que nadie. Preinscríbete gratis, te escribimos por WhatsApp con el QR de pago y aseguras tu cupo con el precio Early Circle.</p>
         <div class="price">
           <div class="price-top">
-            <p class="price-amount">$30.000 <small>COP por persona</small></p>
-            <span class="price-seats">70 cupos</span>
+            <div>
+              <p class="price-tag">Precio Early Circle</p>
+              <p class="price-amount">$30.000 <small>COP por persona</small></p>
+            </div>
+            <span class="price-seats"><b aria-hidden="true"></b>Preventa activa</span>
           </div>
           <p class="price-label">Tu inscripción incluye</p>
           <ul class="price-list">
-            <li>Hidratación durante el evento</li>
+            <li>Calentamiento guiado, 5K acompañados y Social Session con DJ en vivo</li>
+            <li>Hidratación con bebidas de Broncoffee: café, latte o bebidas frías</li>
             <li>Registro fotográfico del evento</li>
-            <li>Participación en el sorteo de premios de nuestros patrocinadores</li>
-            <li>Manilla de acceso</li>
+            <li>Actividades para ganar premios de nuestros patrocinadores</li>
           </ul>
-          <p class="price-note">Pago por Bre-B. Cuando se llenen los 70 cupos, cerramos inscripciones.</p>
+          <p class="price-note">Pago por Bre-B. Los cupos son limitados: cuando se llenen, cerramos inscripciones.</p>
         </div>
         <p class="counter"><b aria-hidden="true"></b>Preinscripciones abiertas</p>
       </div>
@@ -879,7 +886,7 @@ img { max-width: 100%; }
           </div>
 
           <div class="field" id="compField" hidden data-f="acompanantes">
-            <label>Nombre de cada acompañante <span class="hint">así les entregamos su manilla</span></label>
+            <label>Nombre de cada acompañante <span class="hint">así los encontramos en la lista del check-in</span></label>
             <div class="companions" id="companions"></div>
             <div class="err"></div>
           </div>
@@ -899,11 +906,11 @@ img { max-width: 100%; }
 
           <div class="consents">
             <div class="field" data-f="datos">
-              <label class="check"><input type="checkbox" id="datos" name="datos"><span>Autorizo el tratamiento de mis datos y los de mis acompañantes solo para gestionar la inscripción y el ingreso al evento.</span></label>
+              <label class="check"><input type="checkbox" id="datos" name="datos"><span>Autorizo el tratamiento de mis datos y los de mis acompañantes para gestionar la inscripción, el pago y el ingreso al evento, según la <a href="#politicas">política de datos</a>.</span></label>
               <div class="err"></div>
             </div>
             <div class="field" data-f="politicas">
-              <label class="check"><input type="checkbox" id="politicas" name="politicas"><span>Leí y acepto las <a href="#politicas">políticas de The Circle</a>, incluido el uso de fotos y videos del evento.</span></label>
+              <label class="check"><input type="checkbox" id="politicas" name="politicas"><span>Leí y acepto las <a href="#politicas">políticas de The Circle</a>.</span></label>
               <div class="err"></div>
             </div>
             <label class="check"><input type="checkbox" id="novedades" name="novedades"><span>Quiero recibir novedades de próximos encuentros. <span class="hint">opcional</span></span></label>
@@ -924,7 +931,7 @@ img { max-width: 100%; }
     <div class="faq-list">
       <details class="reveal">
         <summary>¿La preinscripción ya me asegura el cupo?</summary>
-        <p>No. La preinscripción es gratis, pero tu lugar solo queda reservado cuando pagues los $30.000 y nos envíes el comprobante. Hay 70 cupos y cerramos cuando se llenen.</p>
+        <p>No. La preinscripción es gratis, pero tu lugar solo queda reservado cuando pagues los $30.000 y nos envíes el comprobante. Los cupos son limitados y cerramos cuando se llenen.</p>
       </details>
       <details class="reveal">
         <summary>¿Cómo pago?</summary>
@@ -932,7 +939,7 @@ img { max-width: 100%; }
       </details>
       <details class="reveal">
         <summary>¿Cómo entro el día del evento?</summary>
-        <p>No necesitas tiquete impreso ni QR. Llegas al check-in desde las 7:00 a. m., dices tu nombre y te entregamos tu manilla numerada. Si pagaste por otras personas, cada una entra con su propio nombre.</p>
+        <p>No necesitas tiquete impreso ni QR. Llegas al check-in desde las 7:00 a. m., dices tu nombre y listo. Si pagaste por otras personas, cada una entra con su propio nombre.</p>
       </details>
       <details class="reveal">
         <summary>No corro. ¿Igual puedo ir?</summary>
@@ -949,7 +956,7 @@ img { max-width: 100%; }
       </details>
       <details class="reveal">
         <summary>¿Qué debo llevar?</summary>
-        <p>Ropa deportiva cómoda, tenis y bloqueador. Llega puntual: las manillas se entregan desde las 7:00 a. m.</p>
+        <p>Ven con ropa cómoda con la que disfrutes moverte, tus tenis favoritos y muchas ganas de vivir la experiencia. Antes de salir de casa, ponte bloqueador. Y llega puntual: el check-in abre a las 7:00 a. m.</p>
       </details>
       <details class="reveal">
         <summary>¿Hay dónde parquear?</summary>
@@ -976,9 +983,9 @@ img { max-width: 100%; }
       <details open>
         <summary><span class="pi" aria-hidden="true">01</span>Inscripción y pago</summary>
         <ol class="pol" start="1" style="counter-reset: pol 0">
-          <li><span>El valor de la inscripción es de <strong>$30.000 COP por persona</strong>.</span></li>
-          <li><span>Cupo máximo: <strong>70 personas</strong>. Cuando se llenen los cupos, cerramos inscripciones.</span></li>
-          <li><span>El pago se hace por <strong>Bre-B</strong>, a nuestra llave o escaneando el QR que te enviamos por WhatsApp.</span></li>
+          <li><span>El valor de la inscripción en preventa (precio Early Circle) es de <strong>$30.000 COP por persona</strong>.</span></li>
+          <li><span>Los cupos son <strong>limitados</strong>. Cuando se llenen, cerramos inscripciones.</span></li>
+          <li><span>El pago se hace por <strong>Bre-B</strong>, escaneando el QR o a la llave que te enviamos por WhatsApp.</span></li>
           <li><span>Para confirmar tu cupo, envía el comprobante de pago con tu nombre completo y celular por WhatsApp o por DM a @thecirclee_co.</span></li>
           <li><span>El cupo solo se reserva cuando el pago esté confirmado. La preinscripción sola no garantiza tu lugar.</span></li>
         </ol>
@@ -986,23 +993,23 @@ img { max-width: 100%; }
       <details>
         <summary><span class="pi" aria-hidden="true">02</span>Cambios y reembolsos</summary>
         <ol class="pol" start="6" style="counter-reset: pol 5">
-          <li><span>No hacemos reembolsos. Si no puedes asistir, puedes ceder tu cupo a otra persona avisándonos con al menos 48 horas de anticipación y enviándonos su nombre y celular.</span></li>
-          <li><span>Si The Circle cancela el evento, te reprogramamos o te devolvemos el dinero.</span></li>
-          <li><span>Por lluvia u otro motivo de fuerza mayor podemos cambiar el horario o la fecha. Te avisaremos por nuestros canales oficiales.</span></li>
+          <li><span>Si te arrepientes, puedes pedir la devolución de tu pago dentro de los 5 días hábiles siguientes a la compra (derecho de retracto). Después de ese plazo no hacemos reembolsos, pero puedes ceder tu cupo a otra persona avisándonos con al menos 48 horas de anticipación y enviándonos su nombre y celular.</span></li>
+          <li><span>Si The Circle cancela el evento, tú eliges: asistir en la nueva fecha o que te devolvamos el dinero.</span></li>
+          <li><span>Por lluvia u otro motivo de fuerza mayor podemos cambiar el horario o la fecha y te avisaremos por nuestros canales oficiales. Si no puedes asistir en la nueva fecha, te devolvemos el dinero.</span></li>
         </ol>
       </details>
       <details>
-        <summary><span class="pi" aria-hidden="true">03</span>Sorteo de premios</summary>
+        <summary><span class="pi" aria-hidden="true">03</span>Actividades y premios</summary>
         <ol class="pol" start="9" style="counter-reset: pol 8">
-          <li><span>Cada inscrito tiene una participación en el sorteo, identificada con el número de su manilla.</span></li>
-          <li><span>Debes estar presente en el momento del sorteo para reclamar el premio. Si no estás, sacamos otro número.</span></li>
+          <li><span>Durante el evento haremos actividades en las que puedes ganar premios de nuestros patrocinadores.</span></li>
+          <li><span>Para recibir un premio debes estar presente en el momento de la actividad.</span></li>
           <li><span>Los premios los entregan nuestros patrocinadores y no se pueden cambiar por dinero ni por otro producto.</span></li>
         </ol>
       </details>
       <details>
         <summary><span class="pi" aria-hidden="true">04</span>Uso de imagen</summary>
         <ol class="pol" start="12" style="counter-reset: pol 11">
-          <li><span>Durante el evento tomaremos fotos y videos. Al inscribirte autorizas que The Circle y sus patrocinadores usen tu imagen en redes sociales y en su publicidad. Si no quieres aparecer, avísale al staff ese día.</span></li>
+          <li><span>Durante el evento tomaremos fotos y videos para publicarlos en las redes de The Circle (Instagram, TikTok y WhatsApp) y en publicaciones nuestras y de nuestros patrocinadores sobre el evento. No vendemos tus fotos. Si no quieres aparecer, avísale al staff ese día y lo tendremos en cuenta. Si después quieres que retiremos una foto o un video donde sales, escríbenos y lo quitamos.</span></li>
         </ol>
       </details>
       <details>
@@ -1010,14 +1017,22 @@ img { max-width: 100%; }
         <ol class="pol" start="13" style="counter-reset: pol 12">
           <li><span>Participas bajo tu propia responsabilidad. Si tienes alguna condición de salud, consulta antes con tu médico y cuéntale al staff.</span></li>
           <li><span>Sigue siempre las indicaciones del staff, sobre todo al cruzar calles.</span></li>
-          <li><span>Lleva ropa deportiva cómoda, tenis y bloqueador.</span></li>
-          <li><span>Llega puntual. Las manillas se entregan desde las 7:00 a. m.</span></li>
+          <li><span>Ven con ropa cómoda para moverte y tenis. Antes de salir de casa, ponte bloqueador.</span></li>
+          <li><span>Llega puntual. El check-in abre a las 7:00 a. m.</span></li>
         </ol>
       </details>
       <details>
         <summary><span class="pi" aria-hidden="true">06</span>Convivencia</summary>
         <ol class="pol" start="17" style="counter-reset: pol 16">
           <li><span>The Circle es un espacio de respeto. Nos reservamos el derecho de retirar a cualquier persona con comportamientos irrespetuosos, sin devolución del dinero.</span></li>
+        </ol>
+      </details>
+      <details>
+        <summary><span class="pi" aria-hidden="true">07</span>Tus datos personales</summary>
+        <ol class="pol" start="18" style="counter-reset: pol 17">
+          <li><span>Usamos tu nombre, WhatsApp y correo, y los nombres de tus acompañantes, solo para gestionar tu inscripción, confirmar tu pago, hacer el check-in y avisarte cambios del evento. Si marcas la casilla de novedades, también te contaremos de próximos encuentros.</span></li>
+          <li><span>No vendemos ni compartimos tus datos con terceros. Los guardamos en herramientas digitales que usamos para organizar el evento.</span></li>
+          <li><span>Puedes pedirnos en cualquier momento conocer, actualizar, corregir o eliminar tus datos, o retirar tu autorización, escribiéndonos por WhatsApp o por DM a @thecirclee_co.</span></li>
         </ol>
       </details>
     </div>
