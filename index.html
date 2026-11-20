@@ -10,7 +10,7 @@
 <meta property="og:image" content="logo-bone.png">
 <title>The Circle · First Lap</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="The Circle / 001 · First Lap. Movimiento, música y comunidad en Bucaramanga. Preinscríbete y asegura tu lugar en la preventa.">
+<meta name="description" content="The Circle / 001 · First Lap. Movimiento, música y comunidad en Bucaramanga. Domingo 13 de diciembre en Broncoffee. 70 cupos.">
 <meta name="theme-color" content="#541126">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -566,6 +566,57 @@ footer small { color: var(--taupe); letter-spacing: .16em; text-transform: upper
   .hero-meta .meta-link { font-size: 14px; padding: 9px 15px; }
 }
 
+/* ---------- Precio ---------- */
+.price {
+  position: relative; overflow: hidden; margin-top: 28px; padding: 28px; border-radius: 26px;
+  background: linear-gradient(140deg, #7a2e45 0%, var(--burgundy) 55%, #2e0813 100%); color: var(--bone);
+  box-shadow: 0 30px 60px -40px rgba(84,17,38,.9);
+}
+.price::after { content: ""; position: absolute; right: -70px; top: -70px; width: 200px; height: 200px; border-radius: 50%; border: 1.5px solid rgba(198,177,162,.45); }
+.price > * { position: relative; z-index: 1; }
+.price-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+.price-amount { margin: 0; font-family: var(--font-display); font-variation-settings: "opsz" 28; font-size: 48px; line-height: 1; font-variant-numeric: tabular-nums; }
+.price-amount small { display: block; font-family: var(--font-body); font-size: 15px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--taupe); margin-top: 8px; }
+.price-seats { font-size: 14px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 8px 14px; border-radius: 999px; background: rgba(245,240,230,.14); border: 1px solid rgba(245,240,230,.3); }
+.price-label { margin: 22px 0 10px; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; color: var(--taupe); }
+.price-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.price-list li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: start; font-size: 17px; color: #f0e4d8; }
+.price-list li::before { content: ""; width: 20px; height: 20px; margin-top: 3px; border-radius: 50%; background: var(--bone) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%23541126' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/100% no-repeat; }
+.price-note { margin: 20px 0 0; padding-top: 16px; border-top: 1px solid rgba(245,240,230,.2); font-size: 15px; color: #e3d5c8; }
+.check a { color: var(--burgundy); font-weight: 700; text-underline-offset: 3px; }
+
+/* ---------- Políticas ---------- */
+.policies { padding-block: 10px 110px; display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; align-items: start; scroll-margin-top: 20px; }
+.policies-head { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 40px); min-width: 0; }
+.policies h2 { font-size: clamp(42px, 5vw, 72px); margin-top: 14px; }
+.policies h2 em { color: var(--burgundy); }
+.policies-head p:not(.eyebrow) { color: var(--muted); margin: 18px 0 0; font-size: 19px; max-width: 34ch; }
+.policies-list { display: grid; gap: 12px; min-width: 0; }
+.policies summary { justify-content: flex-start; }
+.policies summary::after { margin-left: auto; }
+.pi { flex: none; width: 40px; height: 40px; border-radius: 12px; display: grid; place-content: center; background: var(--burgundy); color: var(--bone); font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.pol { margin: 0 0 22px; padding: 0; list-style: none; display: grid; gap: 14px; }
+.pol li { counter-increment: pol; display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; color: var(--charcoal); line-height: 1.55; }
+.pol li::before {
+  content: counter(pol); width: 30px; height: 30px; border-radius: 50%; display: grid; place-content: center;
+  border: 1.5px solid var(--taupe); color: var(--burgundy); font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; margin-top: -2px;
+}
+details[open] .pol { animation: fadeUp .4s var(--ease) both; }
+.foot-link { color: var(--taupe); font-size: 14px; letter-spacing: .08em; text-underline-offset: 4px; }
+@media (max-width: 1000px) {
+  .policies { grid-template-columns: 1fr; gap: 32px; }
+  .policies-head { position: static; }
+}
+@media (max-width: 640px) {
+  .policies { padding-block: 0 80px; }
+  .policies h2 { font-size: 46px; }
+  .price { padding: 24px 22px; border-radius: 24px; }
+  .price-amount { font-size: 44px; }
+  .price-list li { font-size: 18px; }
+  .pol li { font-size: 18px; grid-template-columns: 32px 1fr; }
+  .pi { width: 36px; height: 36px; }
+}
+
 /* ---------- Fixes generales ---------- */
 [hidden] { display: none !important; }
 a, button, label, summary { -webkit-tap-highlight-color: transparent; }
@@ -670,6 +721,7 @@ img { max-width: 100%; }
         <div class="hero-meta">
           <span>Domingo 13 de diciembre</span>
           <span>7:00 a. m.</span>
+          <span>70 cupos</span>
           <a class="meta-link" href="https://www.google.com/maps/place/broncoffee/data=!4m2!3m1!1s0x8e683f007c2c1547:0xab8c74d1c0bf151e" target="_blank" rel="noopener">Broncoffee · Bucaramanga</a>
         </div>
         <div class="hero-actions">
@@ -760,8 +812,8 @@ img { max-width: 100%; }
     <h2 id="h-title" class="reveal-l">Sin tiquetes. <em>Tu nombre es tu entrada.</em></h2>
     <ol class="steps">
       <li class="reveal"><h3>Te preinscribes</h3><p>Tú y tus acompañantes, cada uno con su nombre.</p></li>
-      <li class="reveal"><h3>Te avisamos primero</h3><p>Cuando abra la preventa te escribimos por WhatsApp antes que a nadie.</p></li>
-      <li class="reveal"><h3>Pagas como prefieras</h3><p>Transferencia, billeteras digitales o tarjeta.</p></li>
+      <li class="reveal"><h3>Te escribimos</h3><p>Te enviamos por WhatsApp la llave Bre-B o el QR para pagar.</p></li>
+      <li class="reveal"><h3>Confirmas tu cupo</h3><p>Pagas $30.000 por Bre-B y nos envías el comprobante. Ahí tu lugar queda asegurado.</p></li>
       <li class="reveal"><h3>Recibes tu manilla</h3><p>El día del evento dices tu nombre en el check-in y entras al círculo.</p></li>
     </ol>
     <p class="swipe">Desliza para ver los pasos <i aria-hidden="true">→</i></p>
@@ -772,10 +824,20 @@ img { max-width: 100%; }
       <div class="join-intro">
         <p class="eyebrow b">Preinscripción</p>
         <h2 id="j-title">Entra al <em>círculo.</em></h2>
-        <p>Preinscribirte no tiene costo ni te compromete a pagar. Nos ayuda a saber cuántos vamos a ser y te guarda un lugar.</p>
-        <div class="perk">
-          <strong>Founding Circle</strong>
-          <span>Las personas preinscritas tienen acceso primero a la preventa y al precio Early Circle.</span>
+        <p>Preinscríbete gratis y te escribimos por WhatsApp con los datos de pago. Tu cupo queda confirmado cuando recibamos tu pago.</p>
+        <div class="price">
+          <div class="price-top">
+            <p class="price-amount">$30.000 <small>COP por persona</small></p>
+            <span class="price-seats">70 cupos</span>
+          </div>
+          <p class="price-label">Tu inscripción incluye</p>
+          <ul class="price-list">
+            <li>Hidratación durante el evento</li>
+            <li>Registro fotográfico del evento</li>
+            <li>Participación en el sorteo de premios de nuestros patrocinadores</li>
+            <li>Manilla de acceso</li>
+          </ul>
+          <p class="price-note">Pago por Bre-B. Cuando se llenen los 70 cupos, cerramos inscripciones.</p>
         </div>
         <p class="counter"><b aria-hidden="true"></b>Preinscripciones abiertas</p>
       </div>
@@ -823,19 +885,6 @@ img { max-width: 100%; }
           </div>
 
 
-          <fieldset class="field" data-f="pago">
-            <legend>¿Cómo prefieres pagar cuando abra la preventa? <span class="hint">puedes marcar varias</span></legend>
-            <div class="chips">
-              <label class="chip"><input type="checkbox" name="pago" value="Nequi"><span>Nequi</span></label>
-              <label class="chip"><input type="checkbox" name="pago" value="Daviplata"><span>Daviplata</span></label>
-              <label class="chip"><input type="checkbox" name="pago" value="Bancolombia"><span>Bancolombia</span></label>
-              <label class="chip"><input type="checkbox" name="pago" value="Llave Bre-B"><span>Llave Bre-B</span></label>
-              <label class="chip"><input type="checkbox" name="pago" value="Mercado Pago"><span>Mercado Pago</span></label>
-              <label class="chip"><input type="checkbox" name="pago" value="Tarjeta"><span>Tarjeta de crédito / débito</span></label>
-            </div>
-            <div class="err"></div>
-          </fieldset>
-
           <div class="field">
             <label for="fuente">¿Cómo te enteraste? <span class="hint">opcional</span></label>
             <select id="fuente" name="fuente">
@@ -851,6 +900,10 @@ img { max-width: 100%; }
           <div class="consents">
             <div class="field" data-f="datos">
               <label class="check"><input type="checkbox" id="datos" name="datos"><span>Autorizo el tratamiento de mis datos y los de mis acompañantes solo para gestionar la inscripción y el ingreso al evento.</span></label>
+              <div class="err"></div>
+            </div>
+            <div class="field" data-f="politicas">
+              <label class="check"><input type="checkbox" id="politicas" name="politicas"><span>Leí y acepto las <a href="#politicas">políticas de The Circle</a>, incluido el uso de fotos y videos del evento.</span></label>
               <div class="err"></div>
             </div>
             <label class="check"><input type="checkbox" id="novedades" name="novedades"><span>Quiero recibir novedades de próximos encuentros. <span class="hint">opcional</span></span></label>
@@ -870,17 +923,16 @@ img { max-width: 100%; }
     </div>
     <div class="faq-list">
       <details class="reveal">
-        <summary>¿Preinscribirme significa que ya pagué?</summary>
-        <p>No. Es gratis y no te compromete. Cuando abra la preventa te escribimos por WhatsApp con el precio y los medios de pago.</p>
+        <summary>¿La preinscripción ya me asegura el cupo?</summary>
+        <p>No. La preinscripción es gratis, pero tu lugar solo queda reservado cuando pagues los $30.000 y nos envíes el comprobante. Hay 70 cupos y cerramos cuando se llenen.</p>
       </details>
       <details class="reveal">
         <summary>¿Cómo pago?</summary>
-        <p>Cuando abramos la preventa podrás pagar por cualquiera de estos medios:</p>
-        <div class="pay-list"><span>Nequi</span><span>Daviplata</span><span>Bancolombia</span><span>Llave Bre-B</span><span>Mercado Pago</span><span>Tarjeta</span></div>
+        <p>Por Bre-B, a nuestra llave o escaneando el QR que te enviamos por WhatsApp. Después nos envías el comprobante con tu nombre completo y tu celular por WhatsApp o por DM a @thecirclee_co.</p>
       </details>
       <details class="reveal">
         <summary>¿Cómo entro el día del evento?</summary>
-        <p>No necesitas tiquete impreso ni QR. Llegas al check-in, dices tu nombre y te entregamos tu manilla. Si compraste para otras personas, cada una entra con su propio nombre.</p>
+        <p>No necesitas tiquete impreso ni QR. Llegas al check-in desde las 7:00 a. m., dices tu nombre y te entregamos tu manilla numerada. Si pagaste por otras personas, cada una entra con su propio nombre.</p>
       </details>
       <details class="reveal">
         <summary>No corro. ¿Igual puedo ir?</summary>
@@ -896,6 +948,10 @@ img { max-width: 100%; }
         <p><a class="maps-link" href="https://www.google.com/maps/place/broncoffee/data=!4m2!3m1!1s0x8e683f007c2c1547:0xab8c74d1c0bf151e" target="_blank" rel="noopener">Abrir en Google Maps →</a></p>
       </details>
       <details class="reveal">
+        <summary>¿Qué debo llevar?</summary>
+        <p>Ropa deportiva cómoda, tenis y bloqueador. Llega puntual: las manillas se entregan desde las 7:00 a. m.</p>
+      </details>
+      <details class="reveal">
         <summary>¿Hay dónde parquear?</summary>
         <p>Sí. Justo al lado de Broncoffee hay un parqueadero público (tiene costo). Como salimos y regresamos al mismo punto, puedes dejar tu carro ahí toda la mañana.</p>
       </details>
@@ -909,6 +965,63 @@ img { max-width: 100%; }
       </div>
     </div>
   </section>
+
+  <section class="policies wrap" id="politicas" aria-labelledby="p-title">
+    <div class="policies-head">
+      <p class="eyebrow b">Antes de inscribirte</p>
+      <h2 id="p-title">Políticas de <em>The Circle.</em></h2>
+      <p>Las hicimos cortas y claras. Al inscribirte aceptas estas condiciones.</p>
+    </div>
+    <div class="policies-list">
+      <details open>
+        <summary><span class="pi" aria-hidden="true">01</span>Inscripción y pago</summary>
+        <ol class="pol" start="1" style="counter-reset: pol 0">
+          <li><span>El valor de la inscripción es de <strong>$30.000 COP por persona</strong>.</span></li>
+          <li><span>Cupo máximo: <strong>70 personas</strong>. Cuando se llenen los cupos, cerramos inscripciones.</span></li>
+          <li><span>El pago se hace por <strong>Bre-B</strong>, a nuestra llave o escaneando el QR que te enviamos por WhatsApp.</span></li>
+          <li><span>Para confirmar tu cupo, envía el comprobante de pago con tu nombre completo y celular por WhatsApp o por DM a @thecirclee_co.</span></li>
+          <li><span>El cupo solo se reserva cuando el pago esté confirmado. La preinscripción sola no garantiza tu lugar.</span></li>
+        </ol>
+      </details>
+      <details>
+        <summary><span class="pi" aria-hidden="true">02</span>Cambios y reembolsos</summary>
+        <ol class="pol" start="6" style="counter-reset: pol 5">
+          <li><span>No hacemos reembolsos. Si no puedes asistir, puedes ceder tu cupo a otra persona avisándonos con al menos 48 horas de anticipación y enviándonos su nombre y celular.</span></li>
+          <li><span>Si The Circle cancela el evento, te reprogramamos o te devolvemos el dinero.</span></li>
+          <li><span>Por lluvia u otro motivo de fuerza mayor podemos cambiar el horario o la fecha. Te avisaremos por nuestros canales oficiales.</span></li>
+        </ol>
+      </details>
+      <details>
+        <summary><span class="pi" aria-hidden="true">03</span>Sorteo de premios</summary>
+        <ol class="pol" start="9" style="counter-reset: pol 8">
+          <li><span>Cada inscrito tiene una participación en el sorteo, identificada con el número de su manilla.</span></li>
+          <li><span>Debes estar presente en el momento del sorteo para reclamar el premio. Si no estás, sacamos otro número.</span></li>
+          <li><span>Los premios los entregan nuestros patrocinadores y no se pueden cambiar por dinero ni por otro producto.</span></li>
+        </ol>
+      </details>
+      <details>
+        <summary><span class="pi" aria-hidden="true">04</span>Uso de imagen</summary>
+        <ol class="pol" start="12" style="counter-reset: pol 11">
+          <li><span>Durante el evento tomaremos fotos y videos. Al inscribirte autorizas que The Circle y sus patrocinadores usen tu imagen en redes sociales y en su publicidad. Si no quieres aparecer, avísale al staff ese día.</span></li>
+        </ol>
+      </details>
+      <details>
+        <summary><span class="pi" aria-hidden="true">05</span>Salud y seguridad</summary>
+        <ol class="pol" start="13" style="counter-reset: pol 12">
+          <li><span>Participas bajo tu propia responsabilidad. Si tienes alguna condición de salud, consulta antes con tu médico y cuéntale al staff.</span></li>
+          <li><span>Sigue siempre las indicaciones del staff, sobre todo al cruzar calles.</span></li>
+          <li><span>Lleva ropa deportiva cómoda, tenis y bloqueador.</span></li>
+          <li><span>Llega puntual. Las manillas se entregan desde las 7:00 a. m.</span></li>
+        </ol>
+      </details>
+      <details>
+        <summary><span class="pi" aria-hidden="true">06</span>Convivencia</summary>
+        <ol class="pol" start="17" style="counter-reset: pol 16">
+          <li><span>The Circle es un espacio de respeto. Nos reservamos el derecho de retirar a cualquier persona con comportamientos irrespetuosos, sin devolución del dinero.</span></li>
+        </ol>
+      </details>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -916,6 +1029,7 @@ img { max-width: 100%; }
     <img class="foot-logo reveal" src="logo-bone.svg" alt="The Circle" width="150" height="132">
     <p class="tag">Come as you are.</p>
     <small>Bucaramanga · Wellness, movement &amp; community</small>
+    <a class="foot-link" href="#politicas">Políticas de The Circle</a>
   </div>
 </footer>
 
@@ -973,6 +1087,11 @@ const WHATSAPP_MSG = "Hola The Circle, tengo una duda sobre First Lap";
     addEventListener("resize", onScroll);
     paint();
   }
+
+  /* Abre "Inscripción y pago" al ir a las políticas */
+  document.querySelectorAll('a[href="#politicas"]').forEach(a => a.addEventListener("click", () => {
+    const first = document.querySelector("#politicas details"); if (first) first.open = true;
+  }));
 
   /* Saludo según la hora */
   const h = new Date().getHours();
@@ -1062,7 +1181,8 @@ const WHATSAPP_MSG = "Hola The Circle, tengo una duda sobre First Lap";
       cantidad: qty,
       acompanantes: [...compList.querySelectorAll("input")].map(i => clean(i.value)),
       modalidad: "Correr 5K",
-      pago: fd.getAll("pago"),
+      pago: ["Llave Bre-B"],
+      politicas: !!fd.get("politicas"),
       fuente: fd.get("fuente") || "",
       datos: !!fd.get("datos"),
       novedades: !!fd.get("novedades"),
@@ -1078,8 +1198,8 @@ const WHATSAPP_MSG = "Hola The Circle, tengo una duda sobre First Lap";
     check("whatsapp", digits.length >= 10 && digits.length <= 13, "Escribe un número de WhatsApp válido, por ejemplo 300 123 4567.");
     check("correo", /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.correo), "Revisa el correo, parece incompleto.");
     check("acompanantes", d.acompanantes.every(n => n.length >= 3), "Escribe el nombre de cada acompañante.");
-    check("pago", d.pago.length > 0, "Elige al menos un medio de pago.");
     check("datos", d.datos, "Necesitamos tu autorización para guardar la inscripción.");
+    check("politicas", d.politicas, "Para inscribirte necesitas aceptar las políticas.");
     if (!ok) {
       const first = form.querySelector(".invalid");
       if (first) first.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
@@ -1128,7 +1248,7 @@ const WHATSAPP_MSG = "Hola The Circle, tengo una duda sobre First Lap";
     const hh = document.createElement("h3"); hh.textContent = "You belong here.";
     const p = document.createElement("p");
     const first = d.nombre.split(" ")[0];
-    p.textContent = first + ", ya estás en el círculo. Te escribiremos por WhatsApp apenas abra la preventa" + (d.cantidad > 1 ? " para ti y tus acompañantes." : ".");
+    p.textContent = first + ", tu preinscripción quedó lista. Te escribiremos por WhatsApp con los datos de pago" + (d.cantidad > 1 ? " para ti y tus acompañantes" : "") + ". Tu cupo queda confirmado cuando nos envíes el comprobante.";
     box.append(img, hh, p);
     if (d.cantidad > 1) {
       const n = document.createElement("p"); n.className = "names";
