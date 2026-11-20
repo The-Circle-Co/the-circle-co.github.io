@@ -589,6 +589,55 @@ footer small { color: var(--taupe); letter-spacing: .16em; text-transform: upper
 .price-seats { display: inline-flex; align-items: center; gap: 8px; }
 .price-seats b { width: 8px; height: 8px; border-radius: 50%; background: #6fd08f; box-shadow: 0 0 0 0 rgba(111,208,143,.6); animation: live 2s infinite; }
 
+/* ---------- Pago ---------- */
+.pay { padding-block: 10px 90px; scroll-margin-top: 20px; }
+.pay-card {
+  position: relative; overflow: hidden; border-radius: 32px; padding: 48px; color: var(--bone);
+  background: linear-gradient(140deg, #3a0a19 0%, var(--burgundy) 50%, #7a2e45 100%);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+}
+.pay-card::after { content: ""; position: absolute; left: -120px; bottom: -160px; width: 420px; height: 420px; border-radius: 50%; border: 1.5px solid rgba(198,177,162,.3); box-shadow: 0 0 0 50px rgba(198,177,162,.04); pointer-events: none; }
+.pay-card > * { position: relative; z-index: 1; min-width: 0; }
+.pay-head .eyebrow { color: var(--taupe); }
+.pay-head h2 { font-size: clamp(40px, 5vw, 68px); margin-top: 12px; }
+.pay-head h2 em { color: var(--taupe); }
+.pay-head p:not(.eyebrow) { color: #eadfd2; font-size: 19px; margin: 18px 0 0; max-width: 40ch; }
+.pay-form { display: grid; gap: 20px; }
+.pay-form label { color: var(--bone); }
+.pay-form .hint { color: var(--taupe); }
+.pay-form input[type=text] { background: rgba(245,240,230,.95); }
+.pay-form .err { color: #ffb4a8; }
+.pay-form .qty { background: rgba(245,240,230,.95); }
+.pay-form .btn { width: 100%; }
+#payResult { display: grid; gap: 14px; }
+.pay-again { justify-self: center; background: none; border: 0; color: var(--taupe); font: inherit; font-size: 16px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+.pay-box { display: grid; gap: 18px; justify-items: center; text-align: center; background: rgba(245,240,230,.08); border: 1px solid rgba(245,240,230,.2); border-radius: 24px; padding: 26px 22px; margin-top: 22px; color: var(--bone); }
+.success .pay-box { margin-top: 28px; }
+.pay-sum { display: grid; gap: 4px; }
+.pay-sum span { font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--taupe); font-weight: 600; }
+.pay-sum strong { font-family: var(--font-display); font-variation-settings: "opsz" 28; font-weight: 500; font-size: 52px; line-height: 1; font-variant-numeric: tabular-nums; }
+.pay-qr { display: grid; gap: 12px; justify-items: center; }
+.pay-qr img { width: 240px; height: 240px; object-fit: contain; background: #fff; border-radius: 18px; padding: 12px; }
+.pay-key { display: grid; gap: 2px; background: rgba(245,240,230,.12); border: 1px dashed rgba(245,240,230,.5); color: var(--bone); border-radius: 14px; padding: 10px 18px; font: inherit; cursor: pointer; }
+.pay-key b { font-size: 18px; letter-spacing: .02em; }
+.pay-key small { font-size: 13px; color: var(--taupe); }
+.pay-steps { margin: 0; padding: 0; list-style: none; counter-reset: ps; display: grid; gap: 10px; text-align: left; width: 100%; max-width: 380px; }
+.pay-steps li { counter-increment: ps; display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; font-size: 17px; color: #f0e4d8; }
+.pay-steps li::before { content: counter(ps); width: 28px; height: 28px; border-radius: 50%; display: grid; place-content: center; background: var(--bone); color: var(--burgundy); font-weight: 700; font-size: 14px; }
+.pay-send { width: 100%; max-width: 380px; }
+.pay-note, .success .pay-note { margin: 0; font-size: 14px; color: var(--taupe); }
+.pay-send { padding: 16px 22px; font-size: 16px; }
+@media (max-width: 1000px) { .pay-card { grid-template-columns: 1fr; gap: 28px; padding: 36px 28px; } }
+@media (max-width: 640px) {
+  .pay { padding-block: 0 70px; }
+  .pay-card { padding: 30px 20px; border-radius: 26px; }
+  .pay-head h2 { font-size: 46px; }
+  .pay-head p:not(.eyebrow) { font-size: 19px; }
+  .pay-sum strong { font-size: 46px; }
+  .pay-steps li { font-size: 18px; }
+  .pay-qr img { width: 220px; height: 220px; }
+}
+
 /* ---------- Políticas ---------- */
 .policies { padding-block: 10px 110px; display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; align-items: start; scroll-margin-top: 20px; }
 .policies-head { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 40px); min-width: 0; }
@@ -923,6 +972,39 @@ img { max-width: 100%; }
     </div>
   </section>
 
+
+  <section class="pay wrap" id="pagar" aria-labelledby="pay-title">
+    <div class="pay-card">
+      <div class="pay-head">
+        <p class="eyebrow">¿Ya te preinscribiste?</p>
+        <h2 id="pay-title">Asegura tu cupo <em>aquí.</em></h2>
+        <p>No tienes que volver a inscribirte. Escribe tu nombre, tu código si lo tienes, y cuántas personas vienen en tu grupo. Te mostramos el valor y el QR para pagar.</p>
+      </div>
+      <form class="pay-form" id="payForm" novalidate>
+        <div class="field" data-p="nombre">
+          <label for="payNombre">Nombre del titular</label>
+          <input type="text" id="payNombre" autocomplete="name" maxlength="80" placeholder="Como te preinscribiste">
+          <div class="err"></div>
+        </div>
+        <div class="field" data-p="codigo">
+          <label for="payCodigo">Tu código <span class="hint">opcional, empieza por TC-</span></label>
+          <input type="text" id="payCodigo" maxlength="8" placeholder="TC-XXXXX" autocapitalize="characters" autocomplete="off" spellcheck="false">
+          <div class="err"></div>
+        </div>
+        <div class="field">
+          <label id="payQtyLabel">Personas en tu grupo</label>
+          <div class="qty" role="group" aria-labelledby="payQtyLabel">
+            <button type="button" id="payMinus" aria-label="Quitar una persona">−</button>
+            <output id="payQty" aria-live="polite">1</output>
+            <button type="button" id="payPlus" aria-label="Agregar una persona">+</button>
+          </div>
+        </div>
+        <button class="btn btn-light" type="submit">Ver cómo pagar <span class="arrow" aria-hidden="true">→</span></button>
+      </form>
+      <div id="payResult" hidden></div>
+    </div>
+  </section>
+
   <section class="faq wrap" aria-labelledby="f-title">
     <div class="reveal-l">
       <p class="eyebrow b">Preguntas</p>
@@ -1064,6 +1146,10 @@ const MAX_PEOPLE = 6;
 const CONTACT_WHATSAPP = "573222549436";
 const CONTACT_INSTAGRAM = "thecirclee_co";
 const WHATSAPP_MSG = "Hola The Circle, tengo una duda sobre First Lap";
+/* Pago: precio Early Circle, imagen del QR (súbela al repo con este nombre) y llave Bre-B */
+const PRICE = 30000;
+const QR_IMAGE = "qr-breb.png";
+const BREB_KEY = "";
 /* ========================== */
 
 (function () {
@@ -1263,7 +1349,7 @@ const WHATSAPP_MSG = "Hola The Circle, tengo una duda sobre First Lap";
     const hh = document.createElement("h3"); hh.textContent = "You belong here.";
     const p = document.createElement("p");
     const first = d.nombre.split(" ")[0];
-    p.textContent = first + ", tu preinscripción quedó lista. Te escribiremos por WhatsApp con los datos de pago" + (d.cantidad > 1 ? " para ti y tus acompañantes" : "") + ". Tu cupo queda confirmado cuando nos envíes el comprobante.";
+    p.textContent = first + ", tu preinscripción quedó lista. Asegura tu cupo ahora con el pago de abajo.";
     box.append(img, hh, p);
     if (d.cantidad > 1) {
       const n = document.createElement("p"); n.className = "names";
@@ -1272,6 +1358,7 @@ const WHATSAPP_MSG = "Hola The Circle, tengo una duda sobre First Lap";
     }
     const k = document.createElement("span"); k.className = "code"; k.textContent = "Código " + code;
     box.append(k);
+    box.append(payBlock({ nombre: d.nombre, codigo: code, personas: d.cantidad }));
     if (demo) {
       const dm = document.createElement("p");
       dm.style.fontSize = "14px";
@@ -1281,6 +1368,97 @@ const WHATSAPP_MSG = "Hola The Circle, tengo una duda sobre First Lap";
     area.replaceChildren(box);
     area.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
     requestAnimationFrame(() => confetti(box));
+  }
+
+
+  /* ---------- Pago: bloque reutilizable ---------- */
+  const fmt = n => "$" + n.toLocaleString("es-CO");
+  function payBlock(info) {
+    const total = PRICE * info.personas;
+    const wrap = document.createElement("div"); wrap.className = "pay-box";
+    const sum = document.createElement("div"); sum.className = "pay-sum";
+    const l = document.createElement("span");
+    l.textContent = info.personas > 1 ? info.personas + " personas × " + fmt(PRICE) : "1 persona · precio Early Circle";
+    const t = document.createElement("strong"); t.textContent = fmt(total);
+    sum.append(l, t); wrap.append(sum);
+
+    const qrWrap = document.createElement("div"); qrWrap.className = "pay-qr";
+    const steps = document.createElement("ol"); steps.className = "pay-steps";
+    const waNum = CONTACT_WHATSAPP.replace(/\D/g, "");
+    const msg = "Hola The Circle 🤍 Soy " + info.nombre + ". Te envío el comprobante de pago de First Lap." +
+      (info.codigo ? " Código: " + info.codigo + "." : "") + " Personas: " + info.personas + ". Total: " + fmt(total) + ".";
+    const send = document.createElement("a"); send.className = "btn btn-light pay-send";
+    send.href = "https://wa.me/" + waNum + "?text=" + encodeURIComponent(msg);
+    send.target = "_blank"; send.rel = "noopener";
+
+    const showQR = () => {
+      const img = document.createElement("img"); img.alt = "Código QR de Bre-B para pagar a The Circle";
+      img.src = QR_IMAGE; img.width = 240; img.height = 240;
+      qrWrap.append(img);
+      if (BREB_KEY) {
+        const key = document.createElement("button"); key.type = "button"; key.className = "pay-key";
+        key.innerHTML = "Llave Bre-B: <b></b><small>Toca para copiar</small>";
+        key.querySelector("b").textContent = BREB_KEY;
+        key.addEventListener("click", async () => {
+          try { await navigator.clipboard.writeText(BREB_KEY); key.querySelector("small").textContent = "¡Copiada!"; }
+          catch (_) { const r = document.createRange(); r.selectNodeContents(key.querySelector("b")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+        });
+        qrWrap.append(key);
+      }
+      steps.innerHTML = "<li><span>Escanea el QR desde la app de tu banco o billetera" + (BREB_KEY ? ", o paga a la llave" : "") + ".</span></li><li><span>Paga exactamente <b></b>.</span></li><li><span>Envíanos el comprobante por WhatsApp con el botón de abajo.</span></li>";
+      steps.querySelector("b").textContent = fmt(total);
+      send.innerHTML = 'Enviar comprobante por WhatsApp <span class="arrow" aria-hidden="true">→</span>';
+    };
+    const noQR = () => {
+      qrWrap.remove();
+      steps.innerHTML = "<li><span>Escríbenos por WhatsApp con el botón de abajo.</span></li><li><span>Te enviamos el QR de Bre-B para pagar <b></b>.</span></li><li><span>Nos envías el comprobante y tu cupo queda confirmado.</span></li>";
+      steps.querySelector("b").textContent = fmt(total);
+      const askMsg = "Hola The Circle 🤍 Soy " + info.nombre + ". Quiero pagar mi cupo para First Lap." +
+        (info.codigo ? " Código: " + info.codigo + "." : "") + " Personas: " + info.personas + ".";
+      send.href = "https://wa.me/" + waNum + "?text=" + encodeURIComponent(askMsg);
+      send.innerHTML = 'Pedir el QR por WhatsApp <span class="arrow" aria-hidden="true">→</span>';
+    };
+    // Solo muestra el QR si la imagen existe
+    const probe = new Image();
+    probe.onload = showQR; probe.onerror = noQR;
+    if (QR_IMAGE) probe.src = QR_IMAGE; else noQR();
+
+    wrap.append(qrWrap, steps, send);
+    const note = document.createElement("p"); note.className = "pay-note";
+    note.textContent = "Tu cupo queda confirmado cuando verifiquemos el pago.";
+    wrap.append(note);
+    return wrap;
+  }
+
+  /* ---------- "¿Ya te preinscribiste?" ---------- */
+  const payForm = document.getElementById("payForm");
+  if (payForm) {
+    let pq = 1;
+    const pOut = document.getElementById("payQty"), pMin = document.getElementById("payMinus"), pPlus = document.getElementById("payPlus");
+    const pRender = () => { pOut.textContent = pq; pMin.disabled = pq <= 1; pPlus.disabled = pq >= MAX_PEOPLE; };
+    pMin.addEventListener("click", () => { if (pq > 1) { pq--; pRender(); } });
+    pPlus.addEventListener("click", () => { if (pq < MAX_PEOPLE) { pq++; pRender(); } });
+    pRender();
+    const codeIn = document.getElementById("payCodigo");
+    codeIn.addEventListener("input", () => { codeIn.value = codeIn.value.toUpperCase().replace(/\s/g, ""); });
+    const pErr = (k, m) => { const f = payForm.querySelector('[data-p="' + k + '"]'); f.classList.toggle("invalid", !!m); f.querySelector(".err").textContent = m || ""; };
+    payForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nombre = clean(document.getElementById("payNombre").value);
+      let codigo = codeIn.value.trim().toUpperCase();
+      if (codigo && !codigo.startsWith("TC-")) codigo = "TC-" + codigo.replace(/^TC/, "");
+      const okN = nombre.split(" ").length >= 2, okC = !codigo || /^TC-[A-Z0-9]{5}$/.test(codigo);
+      pErr("nombre", okN ? "" : "Escribe tu nombre y apellido, como te preinscribiste.");
+      pErr("codigo", okC ? "" : "El código tiene este formato: TC-XXXXX. Si no lo tienes, déjalo vacío.");
+      if (!okN || !okC) return;
+      const res = document.getElementById("payResult");
+      res.replaceChildren(payBlock({ nombre, codigo, personas: pq }));
+      res.hidden = false; payForm.hidden = true;
+      const again = document.createElement("button"); again.type = "button"; again.className = "pay-again"; again.textContent = "Cambiar datos";
+      again.addEventListener("click", () => { res.hidden = true; payForm.hidden = false; });
+      res.append(again);
+      res.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+    });
   }
 
   form.addEventListener("submit", async (e) => {
