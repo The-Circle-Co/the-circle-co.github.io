@@ -643,19 +643,19 @@ footer small { color: var(--taupe); letter-spacing: .16em; text-transform: upper
 /* ---------- Políticas ---------- */
 .policies { padding-block: 10px 110px; display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; align-items: start; scroll-margin-top: 20px; }
 .policies-head { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 40px); min-width: 0; }
-.policies h2 { font-size: clamp(36px, 4vw, 56px); margin-top: 14px; }
+.policies h2 { font-size: clamp(30px, 3.4vw, 46px); margin-top: 12px; }
 .policies h2 em { color: var(--burgundy); }
-.policies-head p:not(.eyebrow) { color: var(--muted); margin: 16px 0 0; font-size: 16px; max-width: 34ch; }
+.policies-head p:not(.eyebrow) { color: var(--muted); margin: 14px 0 0; font-size: 14.5px; max-width: 34ch; }
 .policies-list { display: grid; gap: 12px; min-width: 0; }
-.policies summary { justify-content: flex-start; font-size: 16px; padding-block: 17px; }
+.policies summary { justify-content: flex-start; font-size: 14.5px; padding-block: 14px; gap: 12px; }
 .policies details { padding: 0 22px; border-radius: 16px; }
-.policies summary::after { width: 30px; height: 30px; font-size: 19px; }
+.policies summary::after { width: 26px; height: 26px; font-size: 17px; }
 .policies summary::after { margin-left: auto; }
-.pi { flex: none; width: 32px; height: 32px; border-radius: 10px; font-size: 12px !important; display: grid; place-content: center; background: var(--burgundy); color: var(--bone); font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.pi { flex: none; width: 28px; height: 28px; border-radius: 9px; font-size: 11px !important; display: grid; place-content: center; background: var(--burgundy); color: var(--bone); font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .pol { margin: 0 0 18px; gap: 11px !important; padding: 0; list-style: none; display: grid; gap: 14px; }
-.pol li { counter-increment: pol; display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; color: var(--muted); font-size: 15px; line-height: 1.6; }
+.pol li { counter-increment: pol; display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; color: var(--muted); font-size: 13.5px; line-height: 1.6; }
 .pol li::before {
-  content: counter(pol); width: 24px; height: 24px; font-size: 12px !important; border-radius: 50%; display: grid; place-content: center;
+  content: counter(pol); width: 22px; height: 22px; font-size: 11px !important; border-radius: 50%; display: grid; place-content: center;
   border: 1.5px solid var(--taupe); color: var(--burgundy); font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; margin-top: -2px;
 }
 details[open] .pol { animation: fadeUp .4s var(--ease) both; }
@@ -669,14 +669,15 @@ details[open] .pol { animation: fadeUp .4s var(--ease) both; }
 }
 @media (max-width: 640px) {
   .policies { padding-block: 0 80px; }
-  .policies h2 { font-size: 38px; }
+  .policies h2 { font-size: 32px; }
+  .policies .eyebrow { font-size: 12px; }
   .policies details { padding: 0 16px; }
-  .policies summary { font-size: 16px !important; }
+  .policies summary { font-size: 14.5px !important; }
   .price { padding: 24px 22px; border-radius: 24px; }
   .price-amount { font-size: 44px; }
   .price-list li { font-size: 18px; }
-  .pol li { font-size: 15px; grid-template-columns: 26px 1fr; }
-  .pi { width: 30px; height: 30px; }
+  .pol li { font-size: 13.5px; grid-template-columns: 24px 1fr; }
+  .pi { width: 28px; height: 28px; }
 }
 
 /* ---------- Ventana de datos ---------- */
@@ -1097,34 +1098,34 @@ img { max-width: 100%; }
         </ol>
       </details>
       <details>
-        <summary><span class="pi" aria-hidden="true">02</span>Cambios y reembolsos</summary>
+        <summary><span class="pi" aria-hidden="true">02</span>Actividades y premios</summary>
         <ol class="pol" start="6" style="counter-reset: pol 5">
-          <li><span>Si ya no puedes participar ese día, puedes ceder tu cupo a otra persona avisándonos con al menos 48 horas de anticipación y enviándonos su nombre y celular. Si prefieres la devolución, puedes pedirla dentro de los 5 días hábiles siguientes a tu pago; después de ese plazo no hacemos reembolsos.</span></li>
-          <li><span>Si The Circle cancela el evento, tú eliges: asistir en la nueva fecha o que te devolvamos el dinero.</span></li>
-          <li><span>Por lluvia u otro motivo de fuerza mayor podemos cambiar el horario o la fecha y te avisaremos por nuestros canales oficiales. Si no puedes asistir en la nueva fecha, te devolvemos el dinero.</span></li>
-        </ol>
-      </details>
-      <details>
-        <summary><span class="pi" aria-hidden="true">03</span>Actividades y premios</summary>
-        <ol class="pol" start="9" style="counter-reset: pol 8">
           <li><span>Durante el evento haremos actividades en las que puedes ganar premios de nuestros patrocinadores.</span></li>
           <li><span>Para recibir un premio debes estar presente en el momento de la actividad.</span></li>
           <li><span>Los premios los entregan nuestros patrocinadores y no se pueden cambiar por dinero ni por otro producto.</span></li>
         </ol>
       </details>
       <details>
-        <summary><span class="pi" aria-hidden="true">04</span>Uso de imagen</summary>
-        <ol class="pol" start="12" style="counter-reset: pol 11">
+        <summary><span class="pi" aria-hidden="true">03</span>Uso de imagen</summary>
+        <ol class="pol" start="9" style="counter-reset: pol 8">
           <li><span>Durante el evento tomaremos fotos y videos para publicarlos en las redes de The Circle (Instagram, TikTok y WhatsApp) y en publicaciones nuestras y de nuestros patrocinadores sobre el evento. No vendemos tus fotos. Si no quieres aparecer, avísale al staff ese día y lo tendremos en cuenta. Si después quieres que retiremos una foto o un video donde sales, escríbenos y lo quitamos.</span></li>
         </ol>
       </details>
       <details>
-        <summary><span class="pi" aria-hidden="true">05</span>Salud y seguridad</summary>
-        <ol class="pol" start="13" style="counter-reset: pol 12">
+        <summary><span class="pi" aria-hidden="true">04</span>Salud y seguridad</summary>
+        <ol class="pol" start="10" style="counter-reset: pol 9">
           <li><span>Participas bajo tu propia responsabilidad. Si tienes alguna condición de salud, consulta antes con tu médico y cuéntale al staff.</span></li>
           <li><span>Sigue siempre las indicaciones del staff, sobre todo al cruzar calles.</span></li>
           <li><span>Ven con ropa cómoda para moverte y tenis. Antes de salir de casa, ponte bloqueador.</span></li>
           <li><span>Llega puntual. El check-in abre a las 7:00 a. m.</span></li>
+        </ol>
+      </details>
+      <details>
+        <summary><span class="pi" aria-hidden="true">05</span>Cambios y reembolsos</summary>
+        <ol class="pol" start="14" style="counter-reset: pol 13">
+          <li><span>Si ya no puedes participar ese día, puedes ceder tu cupo a otra persona avisándonos con al menos 48 horas de anticipación y enviándonos su nombre y celular. Si prefieres la devolución, puedes pedirla dentro de los 5 días hábiles siguientes a tu pago; después de ese plazo no hacemos reembolsos.</span></li>
+          <li><span>Si The Circle cancela el evento, tú eliges: asistir en la nueva fecha o que te devolvamos el dinero.</span></li>
+          <li><span>Por lluvia u otro motivo de fuerza mayor podemos cambiar el horario o la fecha y te avisaremos por nuestros canales oficiales. Si no puedes asistir en la nueva fecha, te devolvemos el dinero.</span></li>
         </ol>
       </details>
       <details>
