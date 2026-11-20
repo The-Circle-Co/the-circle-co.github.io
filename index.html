@@ -544,6 +544,28 @@ footer small { color: var(--taupe); letter-spacing: .16em; text-transform: upper
   .ncard span { font-size: 18px; }
 }
 
+/* ---------- Mapa ---------- */
+.maps-btn {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 20px; text-decoration: none;
+  font-weight: 700; font-size: 17px; color: var(--bone); background: var(--burgundy);
+  padding: 14px 22px; border-radius: 999px; box-shadow: 0 14px 30px -16px rgba(84,17,38,.8);
+  transition: transform .35s var(--ease), background .3s;
+}
+.maps-btn:hover { transform: translateY(-3px); background: var(--burgundy-deep); }
+.maps-btn svg { width: 20px; height: 20px; flex: none; }
+.maps-link { color: var(--burgundy); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+.hero-meta .meta-link {
+  font-size: 14px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; text-decoration: none;
+  padding: 8px 14px; border-radius: 999px; background: rgba(245,240,230,.18); border: 1px solid rgba(245,240,230,.4);
+  display: inline-flex; align-items: center; gap: 6px; transition: background .3s;
+}
+.hero-meta .meta-link::after { content: "↗"; letter-spacing: 0; }
+.hero-meta .meta-link:hover { background: rgba(245,240,230,.3); }
+@media (max-width: 640px) {
+  .maps-btn { width: 100%; justify-content: center; font-size: 18px; padding: 17px 22px; }
+  .hero-meta .meta-link { font-size: 14px; padding: 9px 15px; }
+}
+
 /* ---------- Fixes generales ---------- */
 [hidden] { display: none !important; }
 a, button, label, summary { -webkit-tap-highlight-color: transparent; }
@@ -648,7 +670,7 @@ img { max-width: 100%; }
         <div class="hero-meta">
           <span>Domingo 13 de diciembre</span>
           <span>7:00 a. m.</span>
-          <span>Bronco Coffee · Bucaramanga</span>
+          <a class="meta-link" href="https://www.google.com/maps/place/broncoffee/data=!4m2!3m1!1s0x8e683f007c2c1547:0xab8c74d1c0bf151e" target="_blank" rel="noopener">Broncoffee · Bucaramanga</a>
         </div>
         <div class="hero-actions">
           <a class="btn btn-light" href="#unete">Quiero mi lugar <span class="arrow" aria-hidden="true">→</span></a>
@@ -697,10 +719,11 @@ img { max-width: 100%; }
       <p class="eyebrow b">La mañana</p>
       <h2 id="t-title">Tu domingo <em>empieza aquí.</em></h2>
       <p>Así pensamos la primera experiencia, de la llegada a la última canción.</p>
-      <p class="note"><strong>Punto de encuentro:</strong> Bronco Coffee. Salimos y regresamos al mismo lugar.</p>
+      <p class="note"><strong>Punto de encuentro:</strong> Broncoffee. Salimos y regresamos al mismo lugar.</p>
+      <a class="maps-btn" href="https://www.google.com/maps/place/broncoffee/data=!4m2!3m1!1s0x8e683f007c2c1547:0xab8c74d1c0bf151e" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Cómo llegar a Broncoffee</a>
     </div>
     <ol class="timeline">
-      <li><time>7:00 a. m.</time><div><h3>The Welcome Circle</h3><p>Check-in en Bronco Coffee, entrega de manillas, hidratación y primeras conversaciones.</p></div></li>
+      <li><time>7:00 a. m.</time><div><h3>The Welcome Circle</h3><p>Check-in en Broncoffee, entrega de manillas, hidratación y primeras conversaciones.</p></div></li>
       <li><time>7:30 a. m.</time><div><h3>The Warm-Up</h3><p>Bienvenida y movilidad guiada por un entrenador.</p></div></li>
       <li><time>7:50 a. m.</time><div><h3>The Movement</h3><p>5K en un solo grupo. Cada quien va a su ritmo y nuestro equipo acompaña el recorrido para que nadie se quede atrás. Volvemos juntos al punto de encuentro a las 9:00 a. m.</p></div></li>
       <li><time>9:00 a. m.</time><div><h3>The Social Session</h3><p>Hora y media de Coffee &amp; Healthy Drinks Party: DJ en vivo, café, bebidas saludables, fotos y estaciones de aliados.</p></div></li>
@@ -869,11 +892,12 @@ img { max-width: 100%; }
       </details>
       <details class="reveal">
         <summary>¿Cuándo y dónde es?</summary>
-        <p>El domingo 13 de diciembre a las 7:00 a. m. en Bronco Coffee, Bucaramanga. Salimos desde ahí y volvemos al mismo lugar para la Social Session.</p>
+        <p>El domingo 13 de diciembre a las 7:00 a. m. en Broncoffee, Bucaramanga. Salimos desde ahí y volvemos al mismo lugar para la Social Session.</p>
+        <p><a class="maps-link" href="https://www.google.com/maps/place/broncoffee/data=!4m2!3m1!1s0x8e683f007c2c1547:0xab8c74d1c0bf151e" target="_blank" rel="noopener">Abrir en Google Maps →</a></p>
       </details>
       <details class="reveal">
         <summary>¿Hay dónde parquear?</summary>
-        <p>Sí. Justo al lado de Bronco Coffee hay un parqueadero público (tiene costo). Como salimos y regresamos al mismo punto, puedes dejar tu carro ahí toda la mañana.</p>
+        <p>Sí. Justo al lado de Broncoffee hay un parqueadero público (tiene costo). Como salimos y regresamos al mismo punto, puedes dejar tu carro ahí toda la mañana.</p>
       </details>
       <div class="contact reveal" id="contacto">
         <h3>¿Te quedó alguna duda?</h3>
