@@ -673,6 +673,21 @@ details[open] .pol { animation: fadeUp .4s var(--ease) both; }
   .pi { width: 36px; height: 36px; }
 }
 
+/* ---------- Ventana de datos ---------- */
+.modal {
+  border: 0; padding: 0; border-radius: 24px; width: min(560px, calc(100% - 32px)); max-height: min(80vh, 640px);
+  background: var(--paper); color: var(--charcoal); box-shadow: 0 40px 80px -30px rgba(36,10,18,.6);
+}
+.modal::backdrop { background: rgba(36,10,18,.55); backdrop-filter: blur(4px); }
+.modal[open] { animation: fadeUp .35s var(--ease) both; }
+.modal-inner { position: relative; padding: 30px 28px 24px; display: grid; gap: 12px; }
+.modal h2 { font-size: 28px; padding-right: 36px; }
+.modal-list { margin: 4px 0 0; padding-left: 20px; display: grid; gap: 10px; font-size: 14px; line-height: 1.55; color: var(--muted); }
+.modal-list a { color: var(--burgundy); }
+.modal-close { position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--bone-2); color: var(--burgundy); font-size: 24px; line-height: 1; cursor: pointer; }
+.modal-ok { margin-top: 8px; padding: 14px 20px; font-size: 16px; }
+.foot-links { margin: 0; color: var(--taupe); }
+
 /* ---------- Fixes generales ---------- */
 [hidden] { display: none !important; }
 a, button, label, summary { -webkit-tap-highlight-color: transparent; }
@@ -958,7 +973,7 @@ img { max-width: 100%; }
 
           <div class="consents">
             <div class="field" data-f="datos">
-              <label class="check"><input type="checkbox" id="datos" name="datos"><span>Autorizo el tratamiento de mis datos y los de mis acompañantes para gestionar la inscripción, el pago y el ingreso al evento, según la <a href="#politicas" data-open="datos">política de datos</a>.</span></label>
+              <label class="check"><input type="checkbox" id="datos" name="datos"><span>Autorizo el tratamiento de mis datos y los de mis acompañantes para gestionar la inscripción, el pago y el ingreso al evento, según la <a href="#datos-personales" class="datos-link">política de datos</a>.</span></label>
               <div class="err"></div>
             </div>
             <div class="field" data-f="politicas">
@@ -1078,7 +1093,7 @@ img { max-width: 100%; }
       <details>
         <summary><span class="pi" aria-hidden="true">02</span>Cambios y reembolsos</summary>
         <ol class="pol" start="6" style="counter-reset: pol 5">
-          <li><span>Si ya no puedes participar ese día, puedes pedir la devolución de tu pago dentro de los 5 días hábiles siguientes a la compra. Después de ese plazo no hacemos reembolsos, pero puedes ceder tu cupo a otra persona avisándonos con al menos 48 horas de anticipación y enviándonos su nombre y celular.</span></li>
+          <li><span>Si ya no puedes participar ese día, puedes ceder tu cupo a otra persona avisándonos con al menos 48 horas de anticipación y enviándonos su nombre y celular. Si prefieres la devolución, puedes pedirla dentro de los 5 días hábiles siguientes a tu pago; después de ese plazo no hacemos reembolsos.</span></li>
           <li><span>Si The Circle cancela el evento, tú eliges: asistir en la nueva fecha o que te devolvamos el dinero.</span></li>
           <li><span>Por lluvia u otro motivo de fuerza mayor podemos cambiar el horario o la fecha y te avisaremos por nuestros canales oficiales. Si no puedes asistir en la nueva fecha, te devolvemos el dinero.</span></li>
         </ol>
@@ -1112,15 +1127,6 @@ img { max-width: 100%; }
           <li><span>The Circle es un espacio de respeto. Nos reservamos el derecho de retirar a cualquier persona con comportamientos irrespetuosos, sin devolución del dinero.</span></li>
         </ol>
       </details>
-      <details>
-        <summary><span class="pi" aria-hidden="true">07</span>Tus datos personales</summary>
-        <ol class="pol" start="18" style="counter-reset: pol 17">
-          <li><span>La responsable del tratamiento de tus datos es <strong>Sara Ariza</strong>, organizadora de The Circle. Contacto: <a class="maps-link" href="mailto:thecirclee.co@gmail.com">thecirclee.co@gmail.com</a> o WhatsApp +57 322 254 9436.</span></li>
-          <li><span>Usamos tu nombre, WhatsApp y correo, y los nombres de tus acompañantes, solo para gestionar tu inscripción, confirmar tu pago, hacer el check-in y avisarte cambios del evento. Si marcas la casilla de novedades, también te contaremos de próximos encuentros.</span></li>
-          <li><span>No vendemos ni compartimos tus datos con terceros. Los guardamos en herramientas digitales que usamos para organizar el evento.</span></li>
-          <li><span>Puedes pedirnos en cualquier momento conocer, actualizar, corregir o eliminar tus datos, o retirar tu autorización, escribiendo a thecirclee.co@gmail.com, por WhatsApp o por DM a @thecirclee_co.</span></li>
-        </ol>
-      </details>
     </div>
   </section>
 </main>
@@ -1130,7 +1136,7 @@ img { max-width: 100%; }
     <img class="foot-logo reveal" src="logo-bone.svg" alt="The Circle" width="150" height="132">
     <p class="tag">Come as you are.</p>
     <small>Bucaramanga · Wellness, movement &amp; community</small>
-    <a class="foot-link" href="#politicas">Políticas de The Circle</a>
+    <p class="foot-links"><a class="foot-link" href="#politicas">Políticas de The Circle</a> · <a class="foot-link datos-link" href="#datos-personales">Política de datos</a></p>
   </div>
 </footer>
 
@@ -1138,6 +1144,22 @@ img { max-width: 100%; }
   <a class="fab wa" data-contact="wa" href="#contacto" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><span>Escríbenos</span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3Z"/></svg></a>
   <a class="fab ig" data-contact="ig" href="#contacto" target="_blank" rel="noopener" aria-label="Síguenos en Instagram"><span>Instagram</span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 2.5h10A4.5 4.5 0 0 1 21.5 7v10a4.5 4.5 0 0 1-4.5 4.5H7A4.5 4.5 0 0 1 2.5 17V7A4.5 4.5 0 0 1 7 2.5Z"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor"/></svg></a>
 </div>
+
+
+<dialog class="modal" id="datosModal" aria-labelledby="dm-title">
+  <div class="modal-inner">
+    <button type="button" class="modal-close" id="datosClose" aria-label="Cerrar">×</button>
+    <p class="eyebrow b">The Circle</p>
+    <h2 id="dm-title">Política de tratamiento de datos</h2>
+    <ol class="modal-list">
+      <li>La responsable del tratamiento de tus datos es <strong>Sara Ariza</strong>, organizadora de The Circle. Contacto: <a class="maps-link" href="mailto:thecirclee.co@gmail.com">thecirclee.co@gmail.com</a> o WhatsApp +57 322 254 9436.</li>
+      <li>Usamos tu nombre, WhatsApp y correo, y los nombres de tus acompañantes, solo para gestionar tu inscripción, confirmar tu pago, hacer el check-in y avisarte cambios del evento. Si marcas la casilla de novedades, también te contaremos de próximos encuentros.</li>
+      <li>No vendemos ni compartimos tus datos con terceros. Los guardamos en herramientas digitales que usamos para organizar el evento.</li>
+      <li>Puedes pedirnos en cualquier momento conocer, actualizar, corregir o eliminar tus datos, o retirar tu autorización, escribiendo a thecirclee.co@gmail.com, por WhatsApp o por DM a @thecirclee_co.</li>
+    </ol>
+    <button type="button" class="btn btn-dark modal-ok" id="datosOk">Entendido</button>
+  </div>
+</dialog>
 
 <div class="sticky-cta" id="stickyCta"><div class="sticky-row"><a class="btn" href="#unete">Quiero mi lugar <span class="arrow" aria-hidden="true">→</span></a><div class="sticky-icons"><a data-contact="wa" href="#contacto" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3Z"/></svg></a><a data-contact="ig" href="#contacto" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 2.5h10A4.5 4.5 0 0 1 21.5 7v10a4.5 4.5 0 0 1-4.5 4.5H7A4.5 4.5 0 0 1 2.5 17V7A4.5 4.5 0 0 1 7 2.5Z"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor"/></svg></a></div></div></div>
 
@@ -1197,13 +1219,22 @@ const BREB_KEY = "@3222549436";
   document.querySelectorAll('a[href="#politicas"]').forEach(a => a.addEventListener("click", (e) => {
     // Dentro de una casilla, el toque no debe marcarla: solo llevar a las políticas
     e.preventDefault(); e.stopPropagation();
-    const blocks = document.querySelectorAll("#politicas details");
-    const target = a.dataset.open === "datos" ? blocks[blocks.length - 1] : blocks[0];
+    const target = document.querySelector("#politicas details");
     if (!target) return;
     target.open = true;
     target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
     target.classList.remove("flash"); void target.offsetWidth; target.classList.add("flash");
   }));
+
+
+  /* Política de datos en ventana emergente */
+  const dm = document.getElementById("datosModal");
+  const openDM = (e) => { e.preventDefault(); e.stopPropagation(); if (dm.showModal) dm.showModal(); else dm.setAttribute("open", ""); };
+  const closeDM = () => { if (dm.close) dm.close(); else dm.removeAttribute("open"); };
+  document.querySelectorAll(".datos-link").forEach(a => a.addEventListener("click", openDM));
+  document.getElementById("datosClose").addEventListener("click", closeDM);
+  document.getElementById("datosOk").addEventListener("click", closeDM);
+  dm.addEventListener("click", (e) => { if (e.target === dm) closeDM(); });
 
   /* Saludo según la hora */
   const h = new Date().getHours();
